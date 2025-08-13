@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout 3</title>
+    <link rel="stylesheet" href="./css/layoutGlobal.css">
+    <style>
+        #page {
+            display: flex;
+        }
+
+        aside {
+            height: 100vh;
+            width: 200px;
+            background-color: var(--aside-color);
+        }
+
+        .side-content {
+            width: 100%;
+        }
+
+        header {
+            height: 10vh;
+            background-color: var(--header-color);
+        }
+
+        main {
+            height: 80vh;
+            background-color: var(--main-color);
+        }
+
+        footer {
+            height: 10vh;
+            background-color: var(--footer-color);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="page">
+        <aside></aside>
+        <div class="side-content">
+            <header>
+                <nav>
+                    <a href="index.html">Home</a>
+                    <a href="layout2.html">Layout 2</a>
+                    <a href="layout3.html">Layout 3</a>
+                    <a href="layout4.html">Layout 4</a>
+                    <a href="layout5.html">Layout 5</a>
+                    <a href="layout6.html">Layout 6</a>
+                </nav>
+            </header>
+            <main></main>
+            <footer></footer>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+    --header-color: #351330;
+    --main-color: #424254;
+    --aside-color: #64908a;
+    --footer-color: #351831;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+nav {
+    width: 450px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}

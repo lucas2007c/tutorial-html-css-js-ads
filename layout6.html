@@ -15,24 +15,18 @@
         .wrapper {
             width: 100%;
             max-width: 1000px;
+            margin: 0 auto;
         }
 
         header {
             height: 100px;
             background-color: var(--header-color);
-            display: flex;
-            justify-content: center;
         }
 
         #header-content {
             width: 100%;
             display: flex;
             justify-content: flex-end;
-        }
-
-        #content {
-            display: flex;
-            justify-content: center;
         }
 
         main {
@@ -50,8 +44,6 @@
         footer {
             height: 100px;
             background-color: var(--footer-color);
-            display: flex;
-            justify-content: center;
             color: white;
         }
 
@@ -61,7 +53,6 @@
             justify-content: center;
             align-items: center;
             height: 100px;
-            /*Perguntar pro professor como coloca altura automatica*/
         }
     </style>
 </head>
@@ -81,12 +72,10 @@
             </div>
         </div>
     </header>
-    <div id="content">
-        <div class="wrapper">
-            <div style="display: flex;">
-                <aside></aside>
-                <main></main>
-            </div>
+    <div class="wrapper">
+        <div style="display: flex;">
+            <aside></aside>
+            <main></main>
         </div>
     </div>
     <footer>

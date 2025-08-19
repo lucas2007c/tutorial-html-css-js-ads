@@ -5,10 +5,10 @@
 }
 
 :root {
-    --header-color: #351330;
+    --header-color: #272a2b;
     --main-color: #424254;
     --aside-color: #64908a;
-    --footer-color: #351831;
+    --footer-color: #272a2b;
 }
 
 header {

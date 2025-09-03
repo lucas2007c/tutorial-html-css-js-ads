@@ -1,8 +1,9 @@
 :root {
     --primary: #FFEE00;
-    --background: #17191a;
-    --secondary-background: #272a2b;
+    --background: #111;
+    --secondary-background: #000;
     --font: #FFF;
+    --card-background: #000;
 }
 
 * {
@@ -20,6 +21,63 @@ html {
 
 .flexrow {
     display: flex;
+}
+
+.modal {
+    background-color: #000000cc;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal main {
+    background-color: #272A2B;
+    width: 350px;
+    height: fit-content;
+    border-radius: 10px;
+    border: 1px solid #ffffff41;
+    padding: 20px;
+}
+
+.modal main form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.modal main label {
+    margin: 20px 0px 3px 0px;
+}
+
+.modal main form input,
+.modal main form select {
+    padding: 3px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #000;
+}
+
+.modal main form input[type="submit"] {
+    background-color: var(--primary);
+    padding: 10px;
+    width: 100%;
+    margin-top: 20px;
+    align-self: flex-end;
+    border: none;
+    cursor: pointer;
+}
+
+#close-modal {
+    margin-top: 20px;
+    color: var(--primary);
+    text-decoration: underline;
+    text-align: center;
+    cursor: pointer;
 }
 
 .wrapper {
@@ -59,6 +117,11 @@ body>header nav ul {
     list-style-type: none;
 }
 
+body>header nav ul li {
+    display: flex;
+    align-items: center;
+}
+
 body>header nav ul li a {
     color: var(--font);
     text-decoration: none;
@@ -72,6 +135,14 @@ body>header nav ul li a:hover,
     border-bottom: 1px solid var(--primary);
 }
 
+body>header button {
+    background-color: var(--primary);
+    border-radius: 5px;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+
 .wrapper>main {
     width: 100%;
     min-height: calc(100vh - 200px);
@@ -80,14 +151,6 @@ body>header nav ul li a:hover,
 
 main>h1 {
     text-align: center;
-}
-
-.positive {
-    color: #00A650;
-}
-
-.negative {
-    color: #FF3B30;
 }
 
 #card-stock {
@@ -101,7 +164,7 @@ main>h1 {
 .card {
     border-radius: 10px;
     width: 250px;
-    background-color: var(--secondary-background);
+    background-color: var(--card-background);
 }
 
 .card header,
@@ -133,6 +196,14 @@ main>h1 {
 
 .card main img {
     width: 40px;
+}
+
+.positive {
+    color: #00A650;
+}
+
+.negative {
+    color: #FF3B30;
 }
 
 .card main h1 {

@@ -33,6 +33,7 @@ html {
     display: none;
     justify-content: center;
     align-items: center;
+    z-index: 1;
 }
 
 .modal main {
@@ -47,7 +48,6 @@ html {
 .modal main form {
     display: flex;
     flex-direction: column;
-    margin-top: 20px;
 }
 
 .modal main label {
@@ -62,14 +62,19 @@ html {
     border: 1px solid #000;
 }
 
-.modal main form input[type="submit"] {
+button,
+input[type="submit"] {
     background-color: var(--primary);
-    padding: 10px;
+    padding: 10px !important;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.modal main form input[type="submit"] {
     width: 100%;
     margin-top: 20px;
     align-self: flex-end;
-    border: none;
-    cursor: pointer;
 }
 
 #close-modal {
@@ -135,14 +140,6 @@ body>header nav ul li a:hover,
     border-bottom: 1px solid var(--primary);
 }
 
-body>header button {
-    background-color: var(--primary);
-    border-radius: 5px;
-    padding: 10px 15px;
-    border: none;
-    cursor: pointer;
-}
-
 .wrapper>main {
     width: 100%;
     min-height: calc(100vh - 200px);
@@ -165,6 +162,7 @@ main>h1 {
     border-radius: 10px;
     width: 250px;
     background-color: var(--card-background);
+    position: relative;
 }
 
 .card header,
@@ -192,6 +190,8 @@ main>h1 {
     padding: 20px 10px;
     border-left: 1px solid white;
     border-right: 1px solid white;
+    height: 115px;
+    justify-content: space-around;
 }
 
 .card main img {
@@ -218,6 +218,16 @@ main>h1 {
 .card footer {
     border: 1px solid white;
     border-radius: 0px 0px 8px 8px;
+}
+
+.card .actions {
+    position: absolute;
+    inset: 0;
+    background-color: #00000077;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
 
 body>footer {

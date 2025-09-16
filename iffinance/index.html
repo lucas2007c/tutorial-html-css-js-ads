@@ -31,7 +31,7 @@
                 <input type="text" id="ativos" name="ativos">
 
                 <input type="submit" value="Adicionar">
-                <span id="close-modal" onclick="closeModal('#add')">Fechar</span>
+                <span class="close-modal" onclick="closeModal('#add')">Fechar</span>
             </form>
         </main>
     </div>
@@ -58,7 +58,7 @@
                 <input type="text" id="editAtivos" name="ativos">
 
                 <input type="submit" value="Confirmar">
-                <span id="close-modal" onclick="closeModal('#edit')">Fechar</span>
+                <span class="close-modal" onclick="closeModal('#edit')">Fechar</span>
             </form>
         </main>
     </div>
@@ -84,7 +84,7 @@
     <div class="wrapper">
         <main>
             <h1>Card Stock</h1>
-            <section id="card-stock">
+            <section id="cards">
                 <div class="card" id="APPL" onmouseenter="showButtons(event)" onmouseleave="hideButtons(event)">
                     <header>
                         <h3 class="cardTicker">APPL</h3>
@@ -98,7 +98,7 @@
 
                     <footer>
                         <h3>Nº Ativos: <span class="cardAtivos">10</span></h3>
-                        <h3>U$2350,00</p>
+                        <h3>U$ <span class="cardTotal">2350,00</span></p>
                     </footer>
 
                     <div class="actions">

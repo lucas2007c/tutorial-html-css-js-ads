@@ -1,4 +1,38 @@
-const cardStock = document.querySelector("#card-stock")
+console.log("teste")
+
+function editTicker(event) {
+    event.preventDefault();
+
+    const form = event.target;
+
+    const cardID = form.cardID.value;
+    const ticker = form.ticker.value;
+    const bolsa = form.bolsa.value;
+    const valor = form.valor.value;
+    const ativos = form.ativos.value;
+
+    const total = valor * ativos;
+
+    const cardEditing = document.getElementById(cardID)
+
+    const cardTicker = cardEditing?.querySelector(".cardTicker");
+    cardTicker.innerText = ticker
+
+    const cardBolsa = cardEditing?.querySelector(".cardBolsa");
+    cardBolsa.innerText = bolsa
+
+    const cardValor = cardEditing?.querySelector("main h1 span");
+    cardValor.innerText = valor
+
+    const cardAtivos = cardEditing?.querySelector(".cardAtivos");
+    cardAtivos.innerText = ativos
+
+    const cardTotal = cardEditing?.querySelector(".cardTotal");
+    cardTotal.innerText = total
+
+    closeModal("#edit")
+
+}
 
 function openModal(modalID) {
     const modal = document.querySelector(modalID)
@@ -34,7 +68,7 @@ function addTicker(event) {
 
             <footer>
                 <h3>Nº Ativos: <span class="cardAtivos">${ativos}</span></h3>
-                <h3>U$${total}</p>
+                <h3>U$ <span class="cardTotal">${total}</span></p>
             </footer>
 
             <div class="actions">
@@ -43,9 +77,10 @@ function addTicker(event) {
             </div>
         </div>
     `
-
-    cardStock.innerHTML += card
+    const cards = document.querySelector("#cards")
+    cards.innerHTML += card
     closeModal("#add")
+    form.reset()
 }
 
 function showButtons(event) {
@@ -67,7 +102,6 @@ function deleteCard(event) {
 
 function openEditCard(event) {
     const card = event.target.closest(".card");
-    console.log(card);
     const ticker = card.querySelector(".cardTicker").innerText;
     const bolsa = card.querySelector(".cardBolsa").innerText;
     const valor = card.querySelector("main h1 span").innerText;
@@ -75,48 +109,21 @@ function openEditCard(event) {
 
     const inputTicker = document.querySelector("#editTicker");
     inputTicker.value = ticker;
-    console.log("b");
 
+    const cardID = card.getAttribute("id");
     const inputCardID = document.querySelector("#cardID")
-    inputCardID.value = ticker;
-    console.log("c");
+    inputCardID.value = cardID;
+
     const selectBolsa = document.querySelector("#editBolsa");
     const option = selectBolsa.querySelector(`option[value=${bolsa}]`);
     option.setAttribute("selected", true)
-    console.log("d");
+
     const inputValor = document.querySelector("#editValor");
     inputValor.value = valor;
-    console.log("e");
+
     const inputAtivos = document.querySelector("#editAtivos");
     inputAtivos.value = ativos;
-    console.log("f");
+
     openModal("#edit");
 }
 
-function editTicker(event) {
-    event.preventDefault();
-
-    const form = event.target;
-    const cardID = form.cardID.value;
-    const ticker = form.ticker.value;
-    const bolsa = form.bolsa.value;
-    const valor = form.valor.value;
-    const ativos = form.ativos.value;
-
-    const total = valor * ativos;
-
-    const cardEditing = document.getElementById(cardID)
-
-    const cardTicker = cardEditing.querySelector("#cardTicker");
-    cardTicker.innerText = ticker
-
-    const cardBolsa = cardEditing.querySelector("#cardBolsa");
-
-    const cardValor = cardEditing.querySelector("main h1 span");
-    cardValor.innerText = valor
-
-    const cardAtivos = cardEditing.querySelector("#cardAtivos");
-    cardAtivos.innerText = ativos
-
-    closeModal("#edit")
-}

@@ -77,7 +77,7 @@ input[type="submit"] {
     align-self: flex-end;
 }
 
-#close-modal {
+.close-modal {
     margin-top: 20px;
     color: var(--primary);
     text-decoration: underline;

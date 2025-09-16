@@ -23,17 +23,17 @@ function addTicker(event) {
     const card = `
         <div class="card" id="${ticker}" onmouseenter="showButtons(event)" onmouseleave="hideButtons(event)">
             <header>
-                <h3>${ticker}</h3>
-                <h3>${bolsa}</h3>
+                <h3 class="cardTicker">${ticker}</h3>
+                <h3 class="cardBolsa">${bolsa}</h3>
             </header>
 
             <main class="flexrow">
-                <h1 class="positive">&#9650 U$${valor}</h1>
+                <h1 class="positive">&#9650 U$<span>${valor}</span></h1>
                 <img src="./img/trending-up.svg">
             </main>
 
             <footer>
-                <h3>Nº Ativos: ${ativos}</h3>
+                <h3>Nº Ativos: <span class="cardAtivos">${ativos}</span></h3>
                 <h3>U$${total}</p>
             </footer>
 
@@ -45,7 +45,7 @@ function addTicker(event) {
     `
 
     cardStock.innerHTML += card
-    closeModal()
+    closeModal("#add")
 }
 
 function showButtons(event) {
@@ -67,27 +67,29 @@ function deleteCard(event) {
 
 function openEditCard(event) {
     const card = event.target.closest(".card");
-    const ticker = card.querySelector("#cardTicker").innerText;
-    const bolsa = card.querySelector("#cardBolsa").innerText;
+    console.log(card);
+    const ticker = card.querySelector(".cardTicker").innerText;
+    const bolsa = card.querySelector(".cardBolsa").innerText;
     const valor = card.querySelector("main h1 span").innerText;
-    const ativos = card.querySelector("#cardAtivos").innerText;
+    const ativos = card.querySelector(".cardAtivos").innerText;
 
     const inputTicker = document.querySelector("#editTicker");
     inputTicker.value = ticker;
+    console.log("b");
 
     const inputCardID = document.querySelector("#cardID")
     inputCardID.value = ticker;
-
+    console.log("c");
     const selectBolsa = document.querySelector("#editBolsa");
     const option = selectBolsa.querySelector(`option[value=${bolsa}]`);
     option.setAttribute("selected", true)
-
+    console.log("d");
     const inputValor = document.querySelector("#editValor");
     inputValor.value = valor;
-
+    console.log("e");
     const inputAtivos = document.querySelector("#editAtivos");
     inputAtivos.value = ativos;
-
+    console.log("f");
     openModal("#edit");
 }
 

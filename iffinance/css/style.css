@@ -242,3 +242,19 @@ body>footer .wrapper {
     align-items: center;
     height: 100px;
 }
+
+table,
+td,
+th {
+    border: 1px solid white;
+}
+
+table {
+    width: 350px;
+    border-collapse: collapse;
+}
+
+td,
+th {
+    padding: 5px 10px;
+}

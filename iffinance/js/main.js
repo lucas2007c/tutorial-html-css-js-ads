@@ -1,6 +1,4 @@
-console.log("teste")
-
-function editTicker(event) {
+document.querySelector("#edit form").addEventListener("submit", (event) => {
     event.preventDefault();
 
     const form = event.target;
@@ -31,8 +29,7 @@ function editTicker(event) {
     cardTotal.innerText = total
 
     closeModal("#edit")
-
-}
+});
 
 function openModal(modalID) {
     const modal = document.querySelector(modalID)
